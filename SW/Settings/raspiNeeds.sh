@@ -3,12 +3,12 @@
 
 
 
-cat '# blacklist spi and i2c by default (many users dont need them)' > /etc/modprobe.d/raspi-blacklist.conf
-cat 'blacklist spi-bcm2708' >> /etc/modprobe.d/raspi-blacklist.conf
-cat 'i2c-dev' >> /etc/modules
+echo '# blacklist spi and i2c by default (many users dont need them)' > /etc/modprobe.d/raspi-blacklist.conf
+echo 'blacklist spi-bcm2708' >> /etc/modprobe.d/raspi-blacklist.conf
+echo 'i2c-dev' >> /etc/modules
 
 
 sudo crontab -l > var
-echo '@reboot sleep 10 &&/home/pi/.run &' >> $var
+echo '@reboot sleep 10 &&/home/pi/.run &' >> var
 sudo crontab $var
 
