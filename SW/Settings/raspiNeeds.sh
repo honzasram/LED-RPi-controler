@@ -7,8 +7,11 @@ echo '# blacklist spi and i2c by default (many users dont need them)' > /etc/mod
 echo 'blacklist spi-bcm2708' >> /etc/modprobe.d/raspi-blacklist.conf
 echo 'i2c-dev' >> /etc/modules
 
+sudo apt-get update
+sudo apt-get install i2c-tool
 
-sudo crontab -l > var
-echo '@reboot sleep 10 &&/home/pi/.run &' >> var
-sudo crontab $var
+(sudo crontab -l; echo "@reboot sleep 10 &&/home/pi/.run &" ) | sudo crontab
 
+cp ./run ~/.run
+
+reboot
