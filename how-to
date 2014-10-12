@@ -1,0 +1,9 @@
+We will most probablz rewite this project to C++ and make from that  reliable application.
+what will be needed: 
+  - check gnublin-api
+  - rewrite program using gnublin api
+  - test it hard!
+
+Why? because so far in python it is using almost 50% of CPU time and it is using mysql. and we don't like it. 
+that's why.
+dot for the idiot
